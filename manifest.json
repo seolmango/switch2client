@@ -14,25 +14,25 @@
   ],
   "screenshots": [
     {
-      "src": "./screenshots/main-wide.webp",
+      "src": "./image/main-wide.webp",
       "type": "image/webp",
       "sizes": "960x540",
       "form_factor": "wide"
     },
     {
-      "src": "./screenshots/main-narrow.webp",
+      "src": "./image/main-narrow.webp",
       "type": "image/webp",
       "sizes": "540x960",
       "form_factor": "narrow"
     },
     {
-      "src": "./screenshots/room-wide.webp",
+      "src": "./image/room-wide.webp",
       "type": "image/webp",
       "sizes": "960x540",
       "form_factor": "wide"
     },
     {
-      "src": "./screenshots/room-narrow.webp",
+      "src": "./image/room-narrow.webp",
       "type": "image/webp",
       "sizes": "540x960",
       "form_factor": "narrow"
@@ -40,12 +40,12 @@
   ],
   "icons": [
     {
-      "src": "./192.webp",
+      "src": "./image/192.webp",
       "type": "image/webp",
       "sizes": "192x192"
     },
     {
-      "src": "./512.webp",
+      "src": "./image/512.webp",
       "type": "image/webp",
       "sizes": "512x512"
     }
@@ -57,12 +57,12 @@
       "description": "Play swITch",
       "icons": [
         {
-          "src": "./192.webp",
+          "src": "./image/192.webp",
           "type": "image/webp",
           "sizes": "192x192"
         },
         {
-          "src": "./512.webp",
+          "src": "./image/512.webp",
           "type": "image/webp",
           "sizes": "512x512"
         }
