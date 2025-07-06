@@ -101,7 +101,7 @@ titleScreen.draw = function (Background_ctx, UI_ctx, Screen) {
     }
     drawText(UI_ctx, 10, 1060, 30, 0, Color_list.text_default_hex, undefined, undefined, `V${__BUILD_VERSION__}`, "left", "GmarketSansMedium");
     if(__FLAG__ === "dev"){
-        drawText(UI_ctx, 10, 1100, 30, 0, Color_list.text_default_hex, undefined, undefined, `ENV: ${__BUILD_ENV__}`, "left", "GmarketSansMedium");
+        drawText(UI_ctx, 10, 1020, 30, 0, Color_list.text_default_hex, undefined, undefined, `ENV: ${__BUILD_ENV__}`, "left", "GmarketSansMedium");
     }
 };
 
