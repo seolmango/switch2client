@@ -6,13 +6,13 @@ import { precacheAndRoute } from 'workbox-precaching';
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
-    /\.(?:png|jpg|jpeg|gif|svg|webp|ico)$/,
+    /\/image(\/asset)?\/.*\.(?:png|jpg|jpeg|gif|svg)$/,
     new CacheFirst({
         cacheName: 'images-cache',
         plugins: [
             new ExpirationPlugin({
                 maxAgeSeconds: 7 * 24 * 60 * 60, // 7일
-                maxEntries: 60,
+                maxEntries: 100,
                 purgeOnQuotaError: true,
             }),
         ],
