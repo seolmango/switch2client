@@ -323,38 +323,38 @@ window.addEventListener("doSocketConnect", function () {
         Screen.currentScreen.initialize(Background_ctx, UI_ctx, Screen);
     })
 
-    Screen.socket.on('player number changed', function (before, after) {
+    Screen.socket.on('player number changed', function (payload) {
         if(Screen.join_room){
             waitingRoomScreen.playerInfos.forEach(function (player) {
-                if(player.number === before){
-                    player.number = after;
+                if(player.number === payload.before_idx){
+                    player.number = payload.after_idx;
                 }
             })
             waitingRoomScreen.user_slot = [false, false, false, false, false, false, false, false, false];
             for(let i = 0; i < waitingRoomScreen.playerInfos.length; i++) {
                 waitingRoomScreen.user_slot[waitingRoomScreen.playerInfos[i].number] = true;
             }
-            if(before === waitingRoomScreen.Client_room_id){
-                waitingRoomScreen.Client_room_id = after;
+            if(payload.before_idx === waitingRoomScreen.Client_room_id){
+                waitingRoomScreen.Client_room_id = payload.after_idx;
             }
         }
     })
 
-    Screen.socket.on('player skill changed', function (player_num, skill) {
+    Screen.socket.on('player skill changed', function (payload) {
         if(Screen.join_room){
             waitingRoomScreen.playerInfos.forEach(function (player) {
-                if(player.number === player_num){
-                    player.skill = skill;
+                if(player.number === payload.player_idx){
+                    player.skill = payload.skill;
                 }
             })
         }
     })
 
-    Screen.socket.on('room map changed', function (mapIndex, mapName) {
+    Screen.socket.on('room map changed', function (payload) {
         if(Screen.join_room){
-            waitingRoomScreen.gameroomInfo.mapIndex = mapIndex;
-            waitingRoomScreen.gameroomInfo.mapName = mapName;
-            Screen.alert.add_Data("map changed", `Map changed to ${mapName}!`, 5);
+            waitingRoomScreen.gameroomInfo.mapIndex = payload.mapIndex;
+            waitingRoomScreen.gameroomInfo.mapName = payload.mapName;
+            Screen.alert.add_Data("map changed", `Map changed to ${payload.mapName}!`, 5);
         }
     })
 });
