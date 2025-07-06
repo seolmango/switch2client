@@ -6,7 +6,7 @@ import { precacheAndRoute } from 'workbox-precaching';
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
-    /\/image(\/asset)?\/.*\.(?:png|jpg|jpeg|gif|svg)$/,
+    /\.(?:png|jpg|jpeg|gif|svg)$/,
     new CacheFirst({
         cacheName: 'images-cache',
         plugins: [
