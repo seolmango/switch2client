@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackObfuscator = require('webpack-obfuscator');
 const path = require('path');
 const webpack = require('webpack');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -45,6 +46,10 @@ module.exports = {
             '__BUILD_VERSION__': JSON.stringify(new Date().toISOString()),
             '__BUILD_ENV__': JSON.stringify(process.platform + '-' + process.arch + '-' + process.version),
             '__SOCKET_SERVER__': JSON.stringify('localhost:3000'),
-        })
+        }),
+        new InjectManifest({
+            swSrc: './src/sw.js',
+            swDest: 'pwa/sw.js',
+        }),
     ]
 }
